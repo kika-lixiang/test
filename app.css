@@ -1,0 +1,12 @@
+#share {
+  display: none; 
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto; 
+  width:360px;
+  bottom: 40px;
+  text-align: center;
+
+}

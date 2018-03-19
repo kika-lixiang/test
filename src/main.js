@@ -486,13 +486,68 @@ var link, jsGame;
       ] }]; return { get: function(s, o) { var u = s >= 0 && i[s] ? [i[s]] : i; return new e.action.role([], 0, 0, 0, o ? o : t, n, r, u || i) } } }), define("index", ["lib/link", "lib/action", "host", "shine"], function(e, t, n, r) { return { init: function() { var t = Date.now(),
         i, s, o = 640,
         u;
+      
+
+
+
+
+
       e.canvas.screen.getTouch() ? (i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1) : (window.onresize = function() { i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1 }, window.onresize()); var a = function(e, t) { var n = ~~(e / 1e3 % 1 * 1e3); return n == 0 ? n = "000" : n < 100 && (n += "0"), ~~(e / 1e3) + "." + n + (t || '"') };
       e.run(function() { var t = Date.now();
-        e.canvas.fillStyle("#FFF").fillScreen(); var n = ~~(o / l.scenes.length); if (!l.died) { l.time = t - l.date; for (var s = 0, f; f = l.scenes[s]; s++) { f.action(0, u + (s + 1) * n, i, n, -8).render(); if (f.hostDied) { l.died = !0, l.dieDate = Date.now(), l.shine = r.get(0).mark(f.host.x, f.host.y - 20).setStep(2); break } } } else { for (var s = 0, f; f = l.scenes[s]; s++) f.host.action(), f.render();
+        e.canvas.fillStyle("#FFF").fillScreen(); var n = ~~(o / l.scenes.length); if (!l.died) { 
+          l.time = t - l.date; 
+          for (var s = 0, f; f = l.scenes[s]; s++) { 
+            f.action(0, u + (s + 1) * n, i, n, -8).render(); 
+            if (f.hostDied) { l.died = !0, 
+              l.dieDate = Date.now(), 
+              l.shine = r.get(0).mark(f.host.x, f.host.y - 20).setStep(2); break } } } 
+              else { 
+                for (var s = 0, f; f = l.scenes[s]; s++) f.host.action(), f.render();
           l.shine && (l.shine.action().render(), l.shine.getSprite().endFrame() && (l.shine = null)), t - l.dieDate >= l.dieTimeout && (l.dieDate = null, h()) } var c = a(l.time);
-        e.canvas.fillStyle("#000").font("30px Arial").fillText(c, i - e.canvas.measureText(c).width - 20, 50), t = null }).menu(function() { e.canvas.fillStyle("#FFF").fillScreen().drawImage("logo", i - 480 >> 1, u).drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 140, 480, 7).drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 555, 480, 7), e.buttonLayout.released("difficulty1") ? (l.moduleName = "我的成績", hideAd(), c(2)) : e.buttonLayout.released("difficulty2") ? (l.moduleName = "噩夢模式", c(3)) : e.buttonLayout.released("difficulty3") ? (l.moduleName = "地獄模式", c(4)) : e.buttonLayout.released("difficulty4") ? (l.moduleName = "炼狱模式", c(5)) : e.buttonLayout.released("rank") && handleSupport() }).zone(function() { e.canvas.fillStyle("#F00").fillScreen().fillStyle("#FFF").drawString(l.moduleName, 0, u + 110, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑").drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 140, 480, 7).drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 555, 480, 7).fillStyle("#000").drawString(a(l.time, "秒"), 0, u + 340, e.graphics.VCENTER, !1, null, null, "60px 微软雅黑").fillStyle("#000").drawString("最佳:" + a(l.bestTime, "秒"), 0, u + 400, e.graphics.VCENTER, !1, null, null, "30px 微软雅黑"), l.time > l.bestTime && e.canvas.fillStyle("#FF0").drawString("新紀錄", 0, u + 240, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑"), e.buttonLayout.released("return") ? f() : e.buttonLayout.released("restart") && handleShare() }).events.mouseDown(function(e, t, n) { if (l.died) return !1; for (var r = 0, i; i = l.scenes[r]; r++) i.touchStart(t, n) }).touchStart(function(e, t, n) { if (l.died) return !1; for (var r = 0, i; i = l.scenes[r]; r++) i.touchStart(t, n) }); var f = function() { showAd();
-        e.buttonLayout.clear().create({ id: "difficulty1", value: "開始遊戲", x: i - 272 >> 1, y: u + 200, width: 272, height: 80, font: "36px 微软雅黑", imageId: "btns1", sx: 0, sy: 0, color: "#FFF", hx: 272, hy: 0, hColor: "#FFF", dex: 272, dey: 0, deColor: "#000" }).create({ id: "rank", value: "更多遊戲", x: i - 272 >> 1, y: u + 160 + 150, width: 272, height: 80, font: "36px 微软雅黑", imageId: "btns1", sx: 0, sy: 0, color: "#FFF", hx: 272, hy: 0, hColor: "#FFF", dex: 272, dey: 0, deColor: "#000" }).base().gameFlow.menu() };
-      f(); var l = { moduleName: "", module: 0, time: 0, bestTime: 0, date: null, died: !1, dieTimeout: 1e3, dieDate: null, scenes: [], shine: null, Scene: e.extend(function(t) { this.id = t, this.x = 0, this.baseY = 0, this.width = 0, this.height = 0, this.host = n.get().setStep(2), this.hostDied = !1, this.boxes = [], this.displayDate = Date.now(), this.displayTimeout = e.comm.getRandom(1e3, 2e3) }, null, { render: function() { e.canvas.fillStyle("#000").fillRect(this.x, this.baseY - 5, this.width, 5); for (var t = this.boxes.length - 1, n; n = this.boxes[t]; t--) e.canvas.fillRect(n.x, n.y, n.width, n.height); return this.host.render(), this }, action: function(t, n, r, i, s) { this.x = t, this.baseY = n, this.width = r, this.height = i; if (!this.hostDied) { this.host.endPath() && this.host.mark(this.x + 100, this.baseY - 5); var o = Date.now(); if (o - this.displayDate >= this.displayTimeout) { this.displayDate = o; var u = e.comm.getRandom(5, 30),
+        //time时间
+        e.canvas.fillStyle("#000").font("30px Arial").fillText(c, i - e.canvas.measureText(c).width - 20, 300), t = null }).menu(function() { 
+        e.canvas.fillStyle("#FFF").fillScreen().drawImage("logo", i - 480 >> 1, u + 100).drawImage("btns1", 
+          0, 99, 480, 7, i - 480 >> 1, u + 240, 480, 7).drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 500, 480, 7), 
+        e.buttonLayout.released("difficulty1") ? (l.moduleName = "RECORD", hideAd()//alert('开始游戏') 开始游戏点击事件
+          , c(2)) : e.buttonLayout.released("difficulty2") ? (l.moduleName = "噩梦模式", c(3)) 
+        : e.buttonLayout.released("difficulty3") ? (l.moduleName = "地狱模式", c(4)) 
+        : e.buttonLayout.released("difficulty4") ? (l.moduleName = "炼狱模式", c(5)) 
+        : e.buttonLayout.released("rank") && handleSupport() }).zone(function() { 
+          e.canvas.fillStyle("#F00").fillScreen().fillStyle("#FFF").drawString(l.moduleName, 0, u + 210, 
+            e.graphics.VCENTER, !1, null, null, "50px 微软雅黑").drawImage("btns1", 0, 106, 480, 7, 
+            i - 480 >> 1, u + 240, 480, 7).drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 480, 480, 
+            7).fillStyle("#000").drawString(a(l.time, "s"), 0, u + 380, 
+            e.graphics.VCENTER, !1, null, null, 
+            "60px 微软雅黑").fillStyle("#000").drawString("best record:" + a(l.bestTime, "s"), 0, 
+            u + 460, e.graphics.VCENTER, !1, null, null, "30px 微软雅黑"), l.time > l.bestTime && 
+            e.canvas.fillStyle("#FF0").drawString("New Record!", 0, u + 300, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑"), 
+          e.buttonLayout.released("return") ? f() //返回按钮事件
+        : e.buttonLayout.released("restart") && handleShare() }).events.mouseDown(
+        function(e, t, n) { 
+          if (l.died) return !1; 
+          for (var r = 0, i; i = l.scenes[r]; r++) 
+            i.touchStart(t, n) }).touchStart(function(e, t, n) 
+          { if (l.died) return !1; 
+            for (var r = 0, i; i = l.scenes[r]; r++) i.touchStart(t, n) }); 
+          var f = function() { 
+              showAd();
+              handleRetrun()
+              e.buttonLayout.clear().create({ 
+            id: "difficulty1", value: "PLAY", x: i - 272 >> 1, y: u + 330, width: 272, height: 80, font: "36px 微软雅黑", 
+            imageId: "btns1", sx: 0, sy: 0, color: "#FFF", hx: 272, hy: 0, hColor: "#FFF", 
+            dex: 272, dey: 0, deColor: "#000" }).base().gameFlow.menu()
+            //   .create({ id: "rank", value: "Support us", 
+            // x: i - 272 >> 1, y: u + 160 + 150, width: 272, height: 80, font: "36px 微软雅黑", 
+            // imageId: "btns1", sx: 0, sy: 0, color: "#FFF", hx: 272, hy: 0, 
+            // hColor: "#FFF", dex: 272, dey: 0, deColor: "#000" })
+          };
+      f(); var l = { 
+        moduleName: "", module: 0, time: 0, bestTime: 0, date: null, died: !1, dieTimeout: 1e3,
+
+
+
+
+       dieDate: null, scenes: [], shine: null, Scene: e.extend(function(t) { this.id = t, this.x = 0, this.baseY = 0, this.width = 0, this.height = 0, this.host = n.get().setStep(2), this.hostDied = !1, this.boxes = [], this.displayDate = Date.now(), this.displayTimeout = e.comm.getRandom(1e3, 2e3) }, null, { render: function() { e.canvas.fillStyle("#000").fillRect(this.x, this.baseY - 5, this.width, 5); for (var t = this.boxes.length - 1, n; n = this.boxes[t]; t--) e.canvas.fillRect(n.x, n.y, n.width, n.height); return this.host.render(), this }, action: function(t, n, r, i, s) { this.x = t, this.baseY = n, this.width = r, this.height = i; if (!this.hostDied) { this.host.endPath() && this.host.mark(this.x + 100, this.baseY - 5); var o = Date.now(); if (o - this.displayDate >= this.displayTimeout) { this.displayDate = o; var u = e.comm.getRandom(5, 30),
                     a = e.comm.getRandom(10, 50);
                   this.boxes.unshift({ x: this.width, y: 0, width: u, height: a }), this.displayTimeout = e.comm.getRandom(1e3, 3e3), u = a = null } for (var f = this.boxes.length - 1, l; l = this.boxes[f]; f--) l.x += s, l.y = this.baseY - 5 - l.height, this.host.collisionInput(l.x, l.y, l.width, l.height, "bR") && (this.hostDied = !0, this.host.clearPath()), (l.x <= -l.width || l.x >= this.width) && this.boxes.splice(f, 1);
                 o = null } return this.host.action(), this }, touchStart: function(t, n) { return this.host.endPath() ? (e.comm.collision(t, n, 1, 1, this.x, this.baseY - this.height, this.width, this.height) && this.host.setPath([

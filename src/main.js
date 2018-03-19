@@ -485,13 +485,7 @@ var link, jsGame;
         [3, 0, 0, 0]
       ] }]; return { get: function(s, o) { var u = s >= 0 && i[s] ? [i[s]] : i; return new e.action.role([], 0, 0, 0, o ? o : t, n, r, u || i) } } }), define("index", ["lib/link", "lib/action", "host", "shine"], function(e, t, n, r) { return { init: function() { var t = Date.now(),
         i, s, o = 640,
-        u;
-      
-
-
-
-
-
+        u; 
       e.canvas.screen.getTouch() ? (i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1) : (window.onresize = function() { i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1 }, window.onresize()); var a = function(e, t) { var n = ~~(e / 1e3 % 1 * 1e3); return n == 0 ? n = "000" : n < 100 && (n += "0"), ~~(e / 1e3) + "." + n + (t || '"') };
       e.run(function() { var t = Date.now();
         e.canvas.fillStyle("#FFF").fillScreen(); var n = ~~(o / l.scenes.length); if (!l.died) { 
@@ -570,7 +564,35 @@ var link, jsGame;
                 [0, 20],
                 [0, 20]
               ]), this) : this } }) },
-        c = function(t) { e.buttonLayout.clear().base().gameFlow.run(), l.died = !1, l.scenes = [], l.time = 0, l.date = Date.now(), l.shine = null, l.module = t; for (var n = 0; n < t; n++) l.scenes.push(new l.Scene(n)) },
-        h = function() { var t = i - 480 >> 1;
-          e.buttonLayout.clear().create({ id: "return", value: "返回", bgColor: "", bgStroke: "", stroke: "", x: t + 100, y: u + 580, width: 100, height: 80, font: "36px 微软雅黑", imageId: "", sx: 0, sy: 0, color: "#FFF", hx: 272, hy: 0, hColor: "#AAA", dex: 272, dey: 0, deColor: "#CCC" }).create({ id: "restart", value: "分享", bgColor: "", bgStroke: "", stroke: "", x: t + 280, y: u + 580, width: 100, height: 80, font: "36px 微软雅黑", imageId: "", sx: 0, sy: 0, color: "yellow", hx: 272, hy: 0, hColor: "#AAA", dex: 272, dey: 0, deColor: "#CCC" }).base().gameFlow.zone(); var n = e.localStorage.getItem("NotDieAnyoneBestTime" + l.module);
-          n == null && (n = "0"), l.bestTime = parseInt(n), l.time > l.bestTime && e.localStorage.setItem("NotDieAnyoneBestTime" + l.module, l.time.toString()), dp_submitScore(l.module, l.time * (l.module - 1)) } } } }), require.config({ baseUrl: "js" }), require(["lib/link", "index"], function(e, t) { e.init(window.innerWidth, window.innerHeight).pushImage([{ id: "logo", src: "//game.ioxapp.com/nodie/img/logo-big.jpg" }, { id: "btns1", src: "//game.ioxapp.com/nodie/img/btns1.png" }], function(e, t, n) {}).initAudio([{ id: "1", src: "sound/1.mp3", preload: !0 }]).loadingCallBack(function(e, t) {}).main(function() { t.init() }) }), define("main", function() {});
+
+
+
+
+      
+        c = function(t) { e.buttonLayout.clear().base().gameFlow.run(), l.died = !1, l.scenes = [], l.time = 0, 
+          l.date = Date.now(), l.shine = null, l.module = t; for (var n = 0; n < t; n++) l.scenes.push(new l.Scene(n)) },
+        h = function() { var t = i - 480 >> 1; if (l.time > 10000) { dp_share(l.time);
+            console.log("GOOD JOB! YOUR RECORD IS" + l.time / 1000 + "s！") };
+          e.buttonLayout.clear().create(
+          { id: "return", value: "REPLAY", 
+          bgColor: "", bgStroke: "", 
+          stroke: "", x: t + 50, 
+          y: u + 480, width: 200, //272 
+          height: 80, 
+          font: "36px 微软雅黑", 
+          imageId: "", 
+          sx: 0, sy: 0, 
+          color: "#FFF", 
+          hx: 272, hy: 0, 
+          hColor: "#AAA", 
+          dex: 272, dey: 0, 
+          deColor: "#CCC" }).create({ id: "restart", value: "SHARE", bgColor: "", 
+          bgStroke: "", stroke: "", x: t + 280, y: u + 480, width: 120, height: 80, 
+          font: "36px 微软雅黑", imageId: "", sx: 0, sy: 0, color: "yellow", hx: 272, hy: 0, 
+          hColor: "#AAA", dex: 272, dey: 0, deColor: "#CCC" }).base().gameFlow.zone(); 
+          var n = e.localStorage.getItem("NotDieAnyoneBestTime" + l.module);
+          n == null && (n = "0"), l.bestTime = parseInt(n), 
+          l.time > l.bestTime && e.localStorage.setItem("NotDieAnyoneBestTime" + l.module, l.time.toString()), 
+          dp_submitScore(l.module, l.time * (l.module - 1)) } } } }), 
+          require.config({ baseUrl: "js" }), 
+          require(["lib/link", "index"], function(e, t) { e.init(window.innerWidth, window.innerHeight).pushImage([{ id: "logo", src: "ygdbns.jpg" }, { id: "btns1", src: "gdyx.png" }], function(e, t, n) {}).initAudio([{ id: "1", src: "sound/1.mp3", preload: !0 }]).loadingCallBack(function(e, t) {}).main(function() { t.init() }) }), define("main", function() {});

@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<!-- saved from url=(0029)http://game.ioxapp.com/nodie/ -->
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta id="viewport" name="viewport" content="width=540,user-scalable=no,target-densitydpi=high-dpi">
-  <script data-main="js/main" src="./a_files/require.js"></script>
-  <title>一個都不能死-暴走小遊戲</title>
-  <meta name="description" content="暴走小遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
-  <meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+  <meta property="og:image" content="ygdbns.jpg"/>
+  <script src="./a_files/require.js"></script>
+  <title>Both Survive</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115426588-1"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- jump_end_ad -->
+  <!--  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1301877944886160",
+    enable_page_level_ads: true
+  });
+  </script> -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115426588-1');
+  </script>
   <style type="text/css">
   body {
     margin: 0px;
@@ -16,32 +32,28 @@
     overflow: hidden;
   }
   </style>
-  <script language="javascript">            
-  var mebtnopenurl = '//game.ioxapp.com/';
+  <script language="javascript">
+  var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MzA5NTMzMTgxMg==&mid=200040545&idx=1&sn=429ecbe3ae11cb5c7ad65a35a9a60be7#rd';
   window.shareData = {
-    "name": "一個都不能死",
-    "link": "//game.ioxapp.com/nodie/?f=fb_app",
-    "picture": "//game.ioxapp.com/nodie/icon.png",
-    "caption": "一個都不能死",
-    "description": "玩起來怎麼都停不下來的啊！",
+    "imgUrl": "http://www.wenzhangku.com/weixin/bunengsi/460.jpg",
+    "timeLineLink": "http://www.wenzhangku.com/weixin/bunengsi/",
+    "tTitle": "一个都不能死",
+    "tContent": "玩起来怎么都停不下来的啊！"
   };
+
 
   function dp_submitScore(m, t) {}
 
   function dp_share(t) {
-    window.shareData.caption = t / 1000 + "秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    // document.title = t / 1000 + "秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    document.getElementById("share").style.display = "";
+    window.shareData.tTitle = document.title;
   }
 
   function dp_share2(t) {
-    window.shareData.caption = t / 1000 + "秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
-    FB.ui({
-      method: 'feed',
-      name: window.shareData.name,
-      link: window.shareData.link,
-      picture: window.shareData.picture,
-      caption: window.shareData.caption,
-      description: window.shareData.description,
-    }, function(response) {});
+    // document.title = t / 1000 + "秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    document.getElementById("share").style.display = "";
+    window.shareData.tTitle = document.title;
   }
 
   function dp_Ranking() {
@@ -77,19 +89,64 @@
       });
     });
   }, false);
-  </script> 
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./a_files/main.js"></script> 
+  </script>
+  <!-- <script type="text/javascript" charset="utf-8" src="./a_files/app.js"></script> -->
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./a_files/main.js"></script>
+  <link rel="stylesheet" href="app.css">
 </head>
+<!-- <script async src="./a_files/share.min.js"></script> -->
 
 <body>
-  <div style="text-align:center;">
-    <canvas id="linkScreen" width="540" height="960" style="width: 540px; height: 960px;">
-      很遗憾，您的浏览器不支持HTML5，请使用支持HTML5的浏览器。
+  <div class="mask" id="mask">
+    <div id="cancal" class="cancal">✖️</div>
+    <ins class="adsbygoogle"
+     style="display:inline-block;width:450px;height:600px"
+     data-ad-client="ca-pub-1301877944886160"
+     data-ad-slot="5456605691"></ins>
+  </div>
+  <div class="footer" id="bottom">
+    <!-- game_top_banner -->
+    <ins class="adsbygoogle"
+     style="display:inline-block;width:450px;height:170px"
+     data-ad-client="ca-pub-1301877944886160"
+     data-ad-slot="3797282931"></ins>
+  </div>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <!-- </div> -->
+  <script>
+  window.onload = function() {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    document.getElementById('cancal').addEventListener("click", function() {
+      document.getElementById("mask").style.display = "none"
+    })
+  }
+  </script>
+  <div style="text-align:center;height: 100%;">
+    <canvas id="linkScreen" width="1366" height="621" style="width: 1366px; height: 621px;">
+      Please use a browser that supports HTML5
     </canvas>
   </div>
-  <div id="share" style="display:none">
-    <img id="logo" width="100%" src="./a_files/logo.jpg" style="position:absolute;top:0;left:0;">
-  </div> 
+  <div id="share">
+    <div class="share">
+
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_whatsapp"></a>
+        <a class="a2a_button_facebook_messenger"></a>
+      </div>
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-top:10px">
+        <a class="a2a_button_google_plus"></a>
+        <a class="a2a_button_mail_ru"></a>
+        <a class="a2a_button_vk"></a>
+        <a class="a2a_button_line"></a>
+        <a class="a2a_button_telegram"></a>
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a> 
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

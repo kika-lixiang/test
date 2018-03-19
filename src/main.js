@@ -603,7 +603,7 @@ var link, jsGame;
   require(["lib/link", "index"], 
     function(e, t) { 
       e.init(window.innerWidth, window.innerHeight).pushImage([
-        { id: "logo", src: "http://7xpjpv.com1.z0.glb.clouddn.com/logo-big.jpg" }, 
+        { id: "logo", src: "http://7xpjpv.com1.z0.glb.clouddn.com/ygdbns.jpg" }, 
         { id: "btns1", src: "http://7xpjpv.com1.z0.glb.clouddn.com/gdyx.png" }], 
         function(e, t, n) {}).initAudio([
         { id: "1", src: "sound/1.mp3", preload: !0 }

@@ -603,7 +603,7 @@ var link, jsGame;
   require(["lib/link", "index"], 
     function(e, t) { 
       e.init(window.innerWidth, window.innerHeight).pushImage([
-        { id: "logo", src: "./src/logo-big.jpg" }, 
+        { id: "logo", src: "//game.ioxapp.com/nodie/img/logo-big.jpg" }, 
         { id: "btns1", src: "//game.ioxapp.com/nodie/img/btns1.png" }], 
         function(e, t, n) {}).initAudio([
         { id: "1", src: "sound/1.mp3", preload: !0 }

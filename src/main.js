@@ -567,8 +567,6 @@ var link, jsGame;
 
 
 
-
-      
         c = function(t) { e.buttonLayout.clear().base().gameFlow.run(), l.died = !1, l.scenes = [], l.time = 0, 
           l.date = Date.now(), l.shine = null, l.module = t; for (var n = 0; n < t; n++) l.scenes.push(new l.Scene(n)) },
         h = function() { var t = i - 480 >> 1; if (l.time > 10000) { dp_share(l.time);
@@ -595,4 +593,11 @@ var link, jsGame;
           l.time > l.bestTime && e.localStorage.setItem("NotDieAnyoneBestTime" + l.module, l.time.toString()), 
           dp_submitScore(l.module, l.time * (l.module - 1)) } } } }), 
           require.config({ baseUrl: "js" }), 
-          require(["lib/link", "index"], function(e, t) { e.init(window.innerWidth, window.innerHeight).pushImage([{ id: "logo", src: "ygdbns.jpg" }, { id: "btns1", src: "gdyx.png" }], function(e, t, n) {}).initAudio([{ id: "1", src: "sound/1.mp3", preload: !0 }]).loadingCallBack(function(e, t) {}).main(function() { t.init() }) }), define("main", function() {});
+
+
+
+
+
+
+
+  require(["lib/link", "index"], function(e, t) { e.init(window.innerWidth, window.innerHeight).pushImage([{ id: "logo", src: "//game.ioxapp.com/nodie/img/logo-big.jpg" }, { id: "btns1", src: "//game.ioxapp.com/nodie/img/btns1.png" }], function(e, t, n) {}).initAudio([{ id: "1", src: "sound/1.mp3", preload: !0 }]).loadingCallBack(function(e, t) {}).main(function() { t.init() }) }), define("main", function() {});

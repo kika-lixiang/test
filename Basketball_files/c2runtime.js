@@ -16683,6 +16683,7 @@ cr.plugins_.Browser = function(runtime) {
       window.home();
   };
   Acts.prototype.GoToURL = function(url, target) {
+  	console.log('跳转')
     if (this.runtime.isCocoonJs)
       CocoonJS["App"]["openURL"](url);
     else if (this.runtime.isEjecta)
@@ -21025,9 +21026,11 @@ cr.behaviors.Fade = function(runtime) {
 
   function Cnds() {};
   Cnds.prototype.OnFadeOutEnd = function() {
+  	console.log('OnFadeOutEnd')
     return true;
   };
   Cnds.prototype.OnFadeInEnd = function() {
+  	console.log('OnFadeInEnd')
     return true;
   };
   Cnds.prototype.OnWaitEnd = function() {

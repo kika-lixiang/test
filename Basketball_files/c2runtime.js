@@ -3923,7 +3923,7 @@ quat4.str = function(a) { return "[" + a[0] + ", " + a[1] + ", " + a[2] + ", " +
       xhr = new ActiveXObject("Microsoft.XMLHTTP");
     else
       xhr = new XMLHttpRequest();
-    var datajs_filename = "data.js";
+    var datajs_filename = "http://kiz10.com/upload/games/htmlgames/crazy-basket-2016/1480036260/data.js";
     if (this.isWindows8App || this.isWindowsPhone8 || this.isWindowsPhone81 || this.isWindows10)
       datajs_filename = "data.json";
     xhr.open("GET", datajs_filename, true);

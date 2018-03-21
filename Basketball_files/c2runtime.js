@@ -20906,6 +20906,7 @@ cr.plugins_.sirg_kiz = function(runtime) {
 
   function Acts() {};
   Acts.prototype.SubmitScore = function(code, codeval) {
+    console.log("SubmitScore")
     this.Kiz10API.submitStat(code, codeval);
   };
   Acts.prototype.UnlockAchievement = function(code, codeval) {

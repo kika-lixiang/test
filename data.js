@@ -4976,7 +4976,7 @@
           ],
           [
             [8, 60, null, 108427018074858, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -13895,7 +13895,7 @@
           ],
           [
             [8, 60, null, 993781407511262, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -13907,7 +13907,7 @@
           ],
           [
             [8, 60, null, 608790379871206, false, [
-              [1, [2, "http://kiz10.com/games-for-your-site"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -17258,7 +17258,7 @@
           ],
           [
             [8, 60, null, 180520913960419, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -17349,7 +17349,7 @@
           ],
           [
             [8, 60, null, 920526290059088, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -18853,7 +18853,7 @@
           ],
           [
             [8, 60, null, 285112777013433, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -18865,7 +18865,7 @@
           ],
           [
             [8, 60, null, 235699426447670, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -19107,7 +19107,7 @@
           ],
           [
             [8, 60, null, 347811705450811, false, [
-              [1, [2, "http://kiz10.com/games-for-your-site"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -19834,7 +19834,7 @@
           ],
           [
             [8, 60, null, 163641266774764, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -26679,7 +26679,7 @@
           ],
           [
             [8, 60, null, 566668871674007, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -26691,7 +26691,7 @@
           ],
           [
             [8, 60, null, 769643593302846, false, [
-              [1, [2, "http://kiz10.com/games-for-your-site"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -30056,7 +30056,7 @@
           ],
           [
             [8, 60, null, 757930455817480, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -37242,7 +37242,7 @@
           ],
           [
             [8, 60, null, 515787092775430, false, [
-              [1, [2, "http://kiz10.com"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]
@@ -37254,7 +37254,7 @@
           ],
           [
             [8, 60, null, 387261761179462, false, [
-              [1, [2, "http://kiz10.com/games-for-your-site"]],
+              [1, [2, "http://www.tcyclops.com/both-survive/"]],
               [1, [2, "NewWindow"]]
             ]]
           ]

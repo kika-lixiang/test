@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://static.game.apusplay.com/games/allgame/wujindeheliu/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Hello Game</title>
+	<!-- <link rel="shortcut icon" href="http://www.52h5game.com/images/icon.png"/> -->
+    <script type="text/javascript" src="./game.js"></script>
+    <script type="text/javascript" src="./developer.js"></script>
+    <script type="text/javascript" src="./game.min.js"></script>
+</head>
+<body style="background: black; margin: 0px;">
+<div id="gameContainer">
+    <canvas id="canvas" width="506" height="829" style="width: 410.782px; height: 673px; margin: auto; display: block;"></canvas>
+
+
+    <script type="text/javascript">
+
+        var SpilData = {
+            id: '576742227280296759'
+        };
+        var Api = null;
+        var LOGO;
+        var MORE;
+        var SCALE;
+        var CENTERX;
+        var CENTERY;
+        var W;
+        var H;
+        var moreGX;
+        var moreGY;
+        var LOGOimg;
+        var LOGOW;
+        var LOGOH;
+        var moreGamesimg;
+        var actionLogo;
+        var actionMoreGames;
+        var noBrand = null;
+        //if (window.console && window.console.log) {
+        //console.log("bekho VERSION 2.2!!!!");
+        //}
+        // <script type="text/javascript" src="lib/impact/impact.js">/script>
+        //<script type="text/javascript" src="lib/game/main.js">/script>
+
+        /*window.addEventListener("keydown", function(e) {
+            // space and arrow keys
+            if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+                e.preventDefault();
+            }
+        }, false);*/
+        window.addEventListener('resize', function() {
+            if (game.device.iOS)
+            {
+                setTimeout(function() {
+                    game.system._onWindowResize();
+                }, 500);
+                setTimeout(function() {
+                    game.system._onWindowResize();
+                }, 800);
+                setTimeout(function() {
+                    game.system.checkOrientation();
+                }, 1000);
+
+            }
+        });
+
+        window.onclick = function() {
+
+            this.focus();
+
+        };
+
+
+            GameAPI.loadAPI (function (apiInstance) {
+                // The API is ready for use.
+                Api = apiInstance;
+                //if (window.console && window.console.log) {
+                    //console.log('GameAPI version ' + apiInstance.version + ' loaded!');
+                //}
+            }, SpilData);
+
+
+    </script>
+<img src="./logo_A10_202x50.png" id="spilgames-branding-image" class=" spilgames-branding-image" style="position: absolute; width: 128.393px; height: 31.7806px; top: 622.899px; cursor: pointer; left: 141.5px; visibility: visible;"><img src="./mroegames.png" id="spilgames-more-games-btn" style="cursor: pointer; position: absolute; width: 81.5078px; height: 56.0833px; top: 616.917px; left: 329.492px; visibility: visible;"></div>
+
+<div id="panda-rotate" style="position: absolute; height: 547px; text-align: center; left: 0px; right: 0px; top: 0px; bottom: 0px; margin: auto; display: none;"><img src="./rotate.jpg" style="position: relative; max-width: 100%;"></div></body></html>

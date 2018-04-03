@@ -6293,6 +6293,7 @@ Main.game.prototype = {
     },
 
     Win : function(){
+        console.log("Win")
         //BGM Fade Out
         objAudioHandler.fadeOutBGM(true);
 
@@ -6348,6 +6349,7 @@ Main.game.prototype = {
     },
 
     Lose  : function(){
+        console.log("Lose")
         //BGM Fade Out
         objAudioHandler.fadeOutBGM(true);
 
@@ -6375,6 +6377,8 @@ Main.game.prototype = {
     },
 
     Pause : function(){
+
+        console.log("Pause")
         //Set Flag
         this.nGameState = ON_GAMEPAUSE;
 
@@ -6390,6 +6394,7 @@ Main.game.prototype = {
     },
 
     Resume : function() {
+                console.log("Resume")
         //Set Flag
         this.nGameState = ON_GAMEPLAY;
 
@@ -6553,6 +6558,7 @@ Main.game.prototype = {
                 this.Restart();
                 break;
             case "BackToMenu" :
+            console.log('next')
                 //BGM Fade Out
                 objAudioHandler.fadeOutBGM(true);
 

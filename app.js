@@ -21,7 +21,7 @@ function handleStart() {
   // document.getElementById('share').style.display = "none"
   // if(window.adCount) 
   // setTimeout(function() {
-    if(startNum > 2 && !(startNum%2)) document.getElementById('mask').style.display = "block"
+    if(startNum > 4 && startNum % 2) document.getElementById('mask').style.display = "block"
     startNum++
   // }, 1000)
   // window.adCount ++

@@ -76,6 +76,14 @@ p.footer {
   font-size: x-small;
 }
 
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40%;
+}
 
 .progress-bar {
     background-color: #1a1a1a;
